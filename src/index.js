@@ -1,8 +1,11 @@
 import React from "react";
-import * as ReactDOMClient from "react-dom/client";
+import * as ReactDOM from "react-dom/client";
 import "./index.css";
 import DrumMachine from "./DrumMachine";
 
-ReactDOMClient.createRoot(document.getElementById("root")).render(
-  <DrumMachine />
-);
+const container = document.getElementById("root");
+
+const root = ReactDOM.createRoot(container);
+root.render(<DrumMachine />);
+
+// Upgrade to React 18 by codeSTACKr - https://youtube.com/shorts/JLyVyURIWG0?feature=share
