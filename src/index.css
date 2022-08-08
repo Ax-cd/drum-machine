@@ -1,1 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+/*---------------------------*/
+/* Custom properties         */
+/*---------------------------*/
+:root {
+	/* Colors */
+	--clr-primary: 0 0% 88%; /* hsl values */
+	--clr-secondary: 168 58% 42%;
+	
+	/* Font-sizes */
+	--fs-400: 1.6rem; /* base size */
 
+	/* Font-families */
+	--ff-sans-normal: 'Roboto', sans-serif;
+    --ff-mono: 'Roboto Mono', monospace;
+
+}
+
+/*---------------------------*/
+/* Reset                     */
+/*---------------------------*/
+
+/* Box sizing */
+*, *::before, *::after {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+/* font-weight */
+h1, h2, h3, h4, h5, h6, p {
+	font-weight: 400;
+}
+
+/* Body */
+body {
+	font-family: var(--ff-mono);
+	font-size: var(--fs-400);
+	background-color: hsl(var(--clr-primary));
+	line-height: 1.5;
+	min-height: 100vh;
+}
+
+/* Remove animation for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+
+
+/*---------------------------*/
+/* Utility classes           */
+/*---------------------------*/
+
+/* General */
+.flex {
+	display: flex;
+	gap: var(--gap, 1rem);
+    flex-direction: column;
+    align-items: center;
+}
+
+.grid {
+	display: grid;
+	gap: var(--gap, 1rem);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 3;
+}
+
+.container {
+	padding-inline: 2rem;
+    padding: 2rem;
+	margin-inline: auto;
+	max-width: 30rem;
+}
+
+/* Typography */
+.ff-sans-normal { font-family: var(--ff-sans-normal); }
+.ff-mono { font-family: var(--ff-mono); }
+
+.fs-400 { font-size: var(--fs-400); }
+
+.uppercase { text-transform: uppercase; }
+
+/* Neumorphism */
+.neumorphism-1 {
+    border-radius: 25px;
+    background: #e0e0e0;
+    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+}
+.neumorphism-2 {
+    border-radius: 15px;
+    background: linear-gradient(145deg, #f0f0f0, #cacaca);
+    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+}
+
+
+
+h1:hover {
+    color: hsl(var(--clr-secondary));
+    transition: 250ms ease-in-out;
+}
+.display {
+    padding: .2em 0;
+    border-top: 1px solid hsl(var(--clr-secondary));
+    border-bottom: 1px solid hsl(var(--clr-secondary));
+}
+.drumPads {
+    --gap: 2.5rem;
+}
+.drum-pad {
+    padding: 2rem;
+    margin-top: .5em;
+    cursor: pointer;
+    border: 1px solid hsl(var(--clr-primary));
+
+}
+.drum-pad:hover {
+border: 1px solid hsl(var(--clr-secondary));
+color: hsl(var(--clr-secondary));
+transition: 250ms ease-in-out;
+}
+.drum-pad:active {
+background: #e0e0e0;
+box-shadow: inset 20px 20px 60px #bebebe, inset -20px -20px 60px #ffffff;
+}
